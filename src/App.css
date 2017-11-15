@@ -1,0 +1,139 @@
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+}
+.links{
+  float:left;
+  list-style: none;
+  margin: 0 30px;
+  min-height: 20px;
+}
+.list::after{
+  content:'';
+  display:block;
+  clear:both;
+}
+.menu{
+  background-color: #da1a4f;
+  color: white;
+  text-decoration: none;
+  height: 43px;
+  padding: 20px;
+}
+.menu a{
+  color: white;
+  text-decoration: none;
+}
+.menu li{
+  list-style-type: none;
+  position: relative;
+}
+.sublinks{
+  position: absolute;
+  background: white;
+  color:#da1a4f;
+  border: 1px solid #da1a4f;
+  /*padding: 10px;*/
+  top: 40px;
+  display:none;
+  z-index: 1000;
+}
+.sublinks .sublinks{
+  top: 0px;
+  left: 79px;
+}
+.sublinks a{
+  color:#da1a4f;
+}
+.sublinks li:hover{
+  background-color: #da1a4f;
+  color:white;
+}
+.sublinks li:hover>a{
+  color:white;
+}
+.links:hover>.sublinks{
+  display:block;
+}
+.sublinks>li:hover>.sublinks{
+  display:block;
+}
+.sublinks li{
+  padding: 0 6px;
+}
+#collapse{
+  transform: rotate(90deg);
+  display: none;
+}
+.closer{
+  display: none;
+}
+.clicker{
+  width: 100px;
+  height: 100px;
+  background-color: #da1a4f;
+  color:white;
+  float:left;
+  border:1px solid white;
+  cursor:pointer;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 100px;
+}
+@media screen and (max-width: 991px){
+  #collapse{
+    width: 20px;
+    height: 11px;
+    color:white;
+    display:block;
+    cursor:pointer;
+    z-index: 1000;
+  }
+  .links{
+    background-color: #fdfbfb;
+    float: none;
+    padding: 20px;
+    margin: 0;
+    border: 1px solid #da1a4f;
+  }
+  .links a{
+    color:#da1a4f;
+  }
+  .list{
+    background-color: green;
+    position: absolute;
+    top: 0;
+    left: -175px;
+    transition:0.5s cubic-bezier(0.34, 2.75, 0, 1.4);
+  }
+  .sublinks{
+    display:block;
+    position: static;
+  }
+  .fade{
+    left:0;
+  }
+  .closer{
+    text-align: right;
+    padding: 10px 15px;
+    background-color: #da1a4f;
+    height: 42px;
+    border: 1px solid white;
+    cursor:pointer;
+    display: block;
+  }
+  .closer:hover{
+    background-color: white;
+    color:#da1a4f;
+  }
+
+  .content{
+    margin-left: 180px;
+    padding-top: 20px;
+  }
+  .content:after{
+    clear:both;
+  }
+}
